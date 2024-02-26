@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 @Configuration
 @EnableScheduling
 @Slf4j
-public class ScheduleEx {
+public class ScheduleExample {
 
     @Scheduled(cron = "* */10 * * * *")
     public void printMsg() {
