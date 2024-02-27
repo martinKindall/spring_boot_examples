@@ -6,7 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 
-
 /*
     It is interesting to know, that in Spring Boot class TaskExecutorConfigurations.java there is
     an annotation like @ConditionalOnMissingBean(Executor.class). Whenever this class is not defined
@@ -23,6 +22,9 @@ public class ExecutorServiceExample {
 
     private final ThreadPoolTaskExecutor executor;
 
+    /**
+     * These jobs will run sequentially if the executor's pool size is 1.
+     */
     @PostConstruct
     public void backgroundTasks() {
 
